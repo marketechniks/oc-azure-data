@@ -1,0 +1,16 @@
+{
+	"name": "braze_export_user_data_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "oc_braze_api_export",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": "/users/export/segment"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

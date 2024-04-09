@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_wta",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "oc_storage1_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "oc_braze_user-data_",
+				"container": "oc-user-data-blob"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

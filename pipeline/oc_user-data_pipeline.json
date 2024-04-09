@@ -1,0 +1,64 @@
+{
+	"name": "oc_user-data_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_wta",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/users/export/segment"
+					},
+					{
+						"name": "Destination",
+						"value": "oc-user-data-blob//oc_braze_user-data_"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "POST",
+						"requestBody": "{\n    \"segment_id\": \"6e8b69a6-533a-4181-b0ba-6187e2b57a09\",\n    \"fields_to_export\": [\n        \"created_at\",\n        \"external_id\",\n        \"user_aliases\",\n        \"braze_id\",\n        \"first_name\",\n        \"last_name\", \n        \"email\",\n        \"dob\",\n        \"home_city\",\n        \"country\",\n        \"phone\",\n        \"language\",\n        \"time_zone\",\n        \"last_coordinates\",\n        \"gender\",\n        \"total_revenue\",\n        \"attributed_campaign\",\n        \"attributed_source\",\n        \"attributed_adgroup\", \n        \"attributed_ad\",\n        \"push_subscribe\",\n        \"email_subscribe\",\n        \"custom_attributes\",\n        \"custom_events\",\n        \"purchases\",\n        \"devices\",\n        \"push_tokens\",\n        \"apps\",\n        \"campaigns_received\",\n        \"canvases_received\",\n        \"cards_clicked\"\n    ],\n    \"output_format\": \"gzip\"\n}"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_wta",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_wta",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-03-18T17:07:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

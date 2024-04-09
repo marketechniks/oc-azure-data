@@ -1,0 +1,28 @@
+{
+	"name": "oc_user_events",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "oc_storage1_linked_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "GcArvrMu4xsIad8PdE4DaKn-o0UY4sMKoGmZ-zdHcqY.zip",
+				"folderPath": "segment-export/720b98f4-3e96-47f5-8b00-d1624828d779/2024-03-15/80a5c2a3-b2c3-416f-b5c3-ace983757f17-1710469290",
+				"container": "oc-user-data-container1"
+			},
+			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
+			"compressionCodec": "ZipDeflate",
+			"compressionLevel": "Optimal",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

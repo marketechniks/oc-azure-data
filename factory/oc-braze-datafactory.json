@@ -1,0 +1,9 @@
+{
+	"name": "oc-braze-datafactory",
+	"location": "australiasoutheast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b3c80bb4-b376-43b3-9497-cc12ab32df09",
+		"tenantId": "3651f80c-2da9-45d7-b237-5ba74f842c8d"
+	}
+}
